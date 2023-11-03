@@ -11,7 +11,7 @@ import { Button, Input, Space, Table, Progress, Badge, Divider } from 'antd';
 import { useRef, useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import LearningStep from '../../components/learning-step/LearningStep';
-
+import { DataType, GenerateData } from './DashBoardData';
 
 
 function getStatusComponent(status: string){
@@ -25,23 +25,23 @@ function getTrainedComponent(trained: number){
 }
 
 
-export interface IDashboardData
-{
-  id: number;
-  guid: string;
-  client: string;
-  server: string;
-  protocol: string;
-  trained: number,
-  status: string;
-  timeSeriasGuid: string;
-}
+// export interface DataType
+// {
+//   id: number;
+//   guid: string;
+//   client: string;
+//   server: string;
+//   protocol: string;
+//   trained: number,
+//   status: string;
+//   timeSeriasGuid: string;
+// }
 
 
-function parseData(data: IDashboardData[]) {
+function parseData(data: DataType[]) {
   var dataConnections = new Array();
 
-  data.forEach(function(value: IDashboardData, index) {
+  data.forEach(function(value: DataType, index) {
       //console.log(value);
       dataConnections.push({
         key: index,
@@ -223,7 +223,7 @@ const Dashboard = () => {
         
 
         <Table columns={columns}
-               dataSource={undefined}
+               dataSource={parseData(GenerateData())}
                //rowClassName={getRowClassName}
                //onRow={(record) => ({onClick: () => handleRowClick(record)})}
              />

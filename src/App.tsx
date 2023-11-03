@@ -15,7 +15,7 @@ import { BrowserRouter as Router, Route, Link, NavLink } from 'react-router-dom'
 import { useParams } from 'react-router-dom';
 import { useLocation } from 'react-router-dom';
 import { Routes } from 'react-router-dom';
-import Dashboard from './dashboard/Dashboard';
+import Dashboard from './pages/dashboard/Dashboard';
 import Modbus from './pages/modbus/Modbus';
 import Developing from './pages/developing/Developing';
 import BreadcrumbCustom from './components/breadcrumb-custum/BreadCrumbCustum';
