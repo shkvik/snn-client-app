@@ -1,0 +1,7 @@
+.my-cursor-pointer:hover {
+    cursor: pointer;
+  }
+
+.row-critical{
+  background-color: aqua;
+}
