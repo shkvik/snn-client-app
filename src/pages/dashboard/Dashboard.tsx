@@ -144,9 +144,9 @@ const Dashboard = () => {
       ];
       let navigate = useNavigate();
 
-      // const handleRowClick = (record) => {
-      //   navigate(`/dashboard/modbus/${record.id}`);
-      // };
+      const handleRowClick = (record: any) => {
+        navigate(`/dashboard/modbus/${record.id}`);
+      };
 
       // const getRowClassName = (record) => {
       //   // Проверяем значение статуса
@@ -225,7 +225,7 @@ const Dashboard = () => {
         <Table columns={columns}
                dataSource={parseData(GenerateData())}
                //rowClassName={getRowClassName}
-               //onRow={(record) => ({onClick: () => handleRowClick(record)})}
+               onRow={(record) => ({onClick: () => handleRowClick(record)})}
              />
       </div>
     );

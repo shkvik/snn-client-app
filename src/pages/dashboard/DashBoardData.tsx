@@ -37,12 +37,12 @@ export function GenerateData()
             title: '',
             id: uuidv4(),
             guid: uuidv4(),
-            client: `guid${i}`,	
-            server: `guid${i}`,
+            client: `127.0.0.${i}:300${i}`,	
+            server: `128.0.0.0:4000`,
             protocol: `Modbus`,		
             status: `Learning`,	
-            trained: 10,	
-            activity: [1,2,3,4],
+            trained: Math.floor(Math.random() * (100 - 0 + 1)) + 0,	
+            activity: [100,100,3,4],
             timeSeriasGuid: uuidv4(),
         })
     }
